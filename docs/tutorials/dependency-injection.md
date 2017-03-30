@@ -34,7 +34,7 @@ First, let's write some code that actually can retrieve the bits for the robot i
 
 The format for requesting a robot is a request to a URL of the form `http://robohash.org/<name>`, where `<name>` is the text we want to hash. The response will be a PNG image, as a byte stream.
 
-To actually retrieve the file, we will use the `.openStream` method of the built in `java.net.URL` class, which returns a `java.io.InputStream` object. An `InputStream` is great in this context, because we can also pass it directly as the `:body` of a Ring response.
+To actually retrieve the file, we will use the `.openStream` method of the built in `java.net.URL` class, which returns a `java.io.InputStream` object. An `InputStream` is great in this context, because we can also pass it directly as the `:body` of a Pedestal response.
 
 This means that a good protocol for our use is something like this:
 
