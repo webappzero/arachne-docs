@@ -124,7 +124,7 @@ We just need to invoke the `myproj.visual-hash/vhash` protocol function on our c
         c (:hash-component req)]
     {:status 200
      :headers {"Content-Type" "image/png"}
-     :body (myproj.visual/vhash c name)}))
+     :body (myproj.visual-hash/vhash c name)}))
 ````
 
 We'll also need to set the content-type header, so the browser knows what kind of a byte stream we're sending it (we happen to know it's a PNG image.)
@@ -142,7 +142,7 @@ After adding this handler and cleaning out the unused "widget" stuff, the final 
         c (:hash-component req)]
     {:status 200
      :headers {"Content-Type" "image/png"}
-     :body (vhash c name)}))
+     :body (myproj.visual-hash/vhash c name)}))
 
 (defn hello-handler
   [req]
